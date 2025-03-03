@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Человеческий капитал</title>
+  <!-- Подключаем Tailwind CSS через CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 p-4">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Вопросы о человеческом капитале</h1>
+    
+    <!-- Поле поиска -->
+    <div class="mb-4">
+      <input type="text" id="searchInput" placeholder="Поиск вопросов..."
+             onkeyup="searchFAQ()"
+             class="w-full p-3 border border-gray-300 rounded">
+    </div>
+    
+    <!-- Кнопки "Развернуть все" и "Свернуть все" -->
+    <div class="mb-6 flex space-x-4">
+      <button onclick="expandAll()" class="px-4 py-2 bg-green-500 text-white rounded">
+        Развернуть все
+      </button>
+      <button onclick="collapseAll()" class="px-4 py-2 bg-red-500 text-white rounded">
+        Свернуть все
+      </button>
+    </div>
+    
+    <!-- Контейнер FAQ -->
+    <div id="faqContainer" class="space-y-4">
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">1. Что такое человеческий капитал и как он влияет на экономику?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong> Человеческий капитал — это совокупность знаний, навыков, умений и опыта, которые человек использует в труде. Он влияет на экономику, так как более квалифицированные работники повышают производительность труда, способствуют инновациям и экономическому росту.</p>
+        </div>
+      </div>
+      
+      <!-- FAQ 2 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">2. Какие факторы влияют на формирование человеческого капитала?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong> Основные факторы:</p>
+          <ul class="list-disc list-inside ml-4">
+            <li>Образование и профессиональная подготовка</li>
+            <li>Опыт работы</li>
+            <li>Состояние здоровья</li>
+            <li>Социальная среда и уровень жизни</li>
+            <li>Возможности для самореализации и карьерного роста</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- FAQ 3 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">3. Как образование и профессиональное обучение влияют на уровень человеческого капитала?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong> Образование и обучение повышают уровень знаний и навыков человека, делают его более конкурентоспособным на рынке труда, увеличивают производительность и потенциал заработка.</p>
+        </div>
+      </div>
+      
+      <!-- FAQ 4 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">4. В чем разница между физическим и человеческим капиталом?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong></p>
+          <p><strong>Физический капитал</strong> — это материальные активы (оборудование, здания, машины), используемые в производстве.</p>
+          <p><strong>Человеческий капитал</strong> — это знания, навыки и квалификация работников, повышающие эффективность труда.</p>
+        </div>
+      </div>
+      
+      <!-- FAQ 5 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">5. Как здоровье населения связано с качеством человеческого капитала?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong> Хорошее здоровье повышает работоспособность, снижает уровень отсутствий на работе, увеличивает продолжительность активной трудовой деятельности и способствует более высокому качеству жизни.</p>
+        </div>
+      </div>
+      
+      <!-- FAQ 6 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">6. Какие методы используют компании для инвестирования в человеческий капитал?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong></p>
+          <ul class="list-disc list-inside ml-4">
+            <li>Обучение и повышение квалификации сотрудников</li>
+            <li>Развитие корпоративной культуры</li>
+            <li>Улучшение условий труда</li>
+            <li>Программы медицинского страхования</li>
+            <li>Мотивационные программы и система бонусов</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- FAQ 7 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">7. Как уровень человеческого капитала влияет на заработную плату и карьерный рост?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong> Более высокий уровень образования, квалификации и опыта увеличивает шансы на получение высокооплачиваемой работы, карьерного роста и стабильности в трудоустройстве.</p>
+        </div>
+      </div>
+      
+      <!-- FAQ 8 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">8. Почему инвестиции в человеческий капитал могут быть более выгодными, чем инвестиции в материальные активы?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong> Человеческий капитал способствует инновациям, повышению производительности и конкурентоспособности. В отличие от материальных активов, знания и навыки могут постоянно обновляться и приносить долгосрочную выгоду.</p>
+        </div>
+      </div>
+      
+      <!-- FAQ 9 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">9. Как государственная политика может способствовать развитию человеческого капитала?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong></p>
+          <ul class="list-disc list-inside ml-4">
+            <li>Вложение в систему образования</li>
+            <li>Развитие программ здравоохранения</li>
+            <li>Создание условий для научных исследований и инноваций</li>
+            <li>Поддержка трудоустройства и профессионального роста населения</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- FAQ 10 -->
+      <div class="faq-item bg-white shadow rounded-lg p-6">
+        <p class="font-semibold">10. Какие современные вызовы (например, автоматизация, ИИ) влияют на развитие человеческого капитала?</p>
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+                onclick="toggleAnswer(this)">Показать ответ</button>
+        <div class="mt-2 text-gray-700 hidden">
+          <p><strong>Ответ:</strong></p>
+          <ul class="list-disc list-inside ml-4">
+            <li>Развитие технологий требует постоянного обновления знаний и переквалификации</li>
+            <li>Автоматизация может привести к сокращению рабочих мест, но также создаёт новые профессии</li>
+            <li>Гибкие формы занятости и удалённая работа требуют новых навыков, таких как цифровая грамотность</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Переключение отображения ответа для конкретного вопроса
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      answer.classList.toggle('hidden');
+      button.textContent = answer.classList.contains('hidden') ? 'Показать ответ' : 'Скрыть ответ';
+    }
+    
+    // Развернуть все ответы
+    function expandAll() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const answer = item.querySelector('div.text-gray-700');
+        const btn = item.querySelector('button');
+        answer.classList.remove('hidden');
+        btn.textContent = 'Скрыть ответ';
+      });
+    }
+    
+    // Свернуть все ответы
+    function collapseAll() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const answer = item.querySelector('div.text-gray-700');
+        const btn = item.querySelector('button');
+        answer.classList.add('hidden');
+        btn.textContent = 'Показать ответ';
+      });
+    }
+    
+    // Функция поиска по вопросам
+    function searchFAQ() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        // Берём текст первого параграфа (вопроса)
+        const question = item.querySelector('p').textContent.toLowerCase();
+        item.style.display = question.includes(filter) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
